@@ -1,0 +1,167 @@
+html, body{
+    background-color: gray;
+    font-family: Verdana;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color:limegreen;
+}
+
+a:active {
+    color: red;
+}
+
+/* CONTAINER */
+
+#container, footer, header {
+    width: 960px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px 20px;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.item{
+    border-bottom: 1px solid silver;
+    padding: 5px;
+    margin: 10px;
+    display: inline-flex;
+    width: 450px;
+}
+
+.item:hover{
+    background-color: gainsboro;
+}
+
+.item .left{
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.item .left .avatar {
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 150px;
+}
+
+.item .right{
+    display: inline-block;
+}
+
+.item .right h2 {
+    padding: 0;
+    margin: 0;
+}
+
+.item:hover .right ul{
+    color: black;
+}
+
+.detail {
+    position: relative;
+}
+
+.detail .left, .detail .right {
+display: inline-block;
+}
+.detail .left{
+width: 300px;
+margin-right: 20px;
+float: left;
+}
+
+.detail .right{
+width: 630px;
+}
+
+.detail .stats{
+border: 2px solid black;
+}
+
+.detail .stats .gear{
+list-style: none;
+padding: 0;
+padding-left: 20px;
+}
+
+/* FOOTER */
+
+footer {
+margin-top: 10px;
+text-align: center;
+}
+
+/* HEADER */
+
+header .backbutton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+header .addbutton {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+header .locationsbutton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+/* OWN CODE */
+
+img[src="../resources/images/succes.jpg"], img[src="../resources/images/cancelled.png"] {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    text-align: left;
+    padding-left: 4px;
+}
+
+td {
+    padding: 5px 0px 5px 18px
+}
+
+td a {
+    border: none;
+    background-color: transparent;
+    display: block;
+    float: right;
+    cursor: pointer;
+    text-align: center;
+    padding-right: 0px;
+}
+
+table, th, td {
+    border: black 1px solid;
+}
+
+.addInput {
+    padding: 0px 5px;
+    width: 18%;
+}
