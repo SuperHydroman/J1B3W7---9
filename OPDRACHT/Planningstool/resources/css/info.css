@@ -1,0 +1,87 @@
+.input>label {
+    padding-right: 10px;
+}
+
+.fa-ul {
+    padding: 10px 10px 0px;
+}
+
+.avatar {
+    width: 300px;
+}
+
+.detail {
+    position: relative;
+    margin: 20px 0px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #afe3fa;
+}
+
+.detail .stats{
+    margin-top: 25px;
+    border: 2px solid black;
+}
+
+.detail .stats .gear{
+    list-style: none;
+    padding: 0;
+    padding-left: 20px;
+}
+
+.detail .left, .detail .right {
+    display: inline-block;
+}
+.detail .left{
+    width: 300px;
+    margin-right: 20px;
+    float: left;
+}
+
+.detail .right{
+    width: 70%;
+    margin-top: 16px;
+}
+
+.gameTitle {
+    position: absolute;
+    top: 21px;
+    left: 342px;
+
+    color: white;
+    text-shadow: 0 1px 0px #378ab4, 1px 0 0px #5dabcd, 1px 2px 1px #378ab4, 2px 1px 1px #5dabcd, 2px 3px 2px #378ab4,
+    3px 2px 2px #5dabcd, 3px 4px 2px #378ab4, 4px 3px 3px #5dabcd, 4px 5px 3px #378ab4, 5px 4px 2px #5dabcd, 5px 6px 2px #378ab4,
+    6px 5px 2px #5dabcd, 6px 7px 1px #378ab4, 7px 6px 1px #5dabcd, 7px 8px 0px #378ab4, 8px 7px 0px #5dabcd;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+}
+
+.gameInfo {
+    border-bottom: 4px solid deepskyblue;
+    padding-left: 100px;
+    margin-bottom: 10px;
+}
+
+#info>.gameInfo .fa-ul>li {
+    display: inline-block;
+    padding: 0px 10px;
+}
+
+#info>.gameInfo>.fa-ul {
+    text-align: center;
+}
+
+#info>.gameInfo>.fa-ul>li>.fa-li {
+    position: initial;
+    left: initial;
+}
+
+.gameDesc>h5 {
+    color: white;
+    text-shadow: 0 1px 0px #378ab4, 1px 0 0px #5dabcd, 1px 2px 1px #378ab4, 2px 1px 1px #5dabcd, 2px 3px 2px #378ab4,
+    3px 2px 2px #5dabcd, 3px 4px 2px #378ab4, 4px 3px 3px #5dabcd, 4px 5px 3px #378ab4, 5px 4px 2px #5dabcd;
+}

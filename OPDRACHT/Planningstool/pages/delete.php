@@ -2,10 +2,13 @@
 
 require "../includes/datalayer.php";
 
+$gameID = $_GET['gameID'];
 $id = $_GET['id'];
-$getGame = getSpecificGame($id);
 
-$feedback = "Toevoegen";
+$getGame = getSpecificGame($gameID);
+$getPlannedGame = getSpecificPlannedGame($gameID);
+
+$feedback = "Verwijderen";
 
 require "../includes/header.php";
 
@@ -55,8 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if(empty($playersErr) && empty($explainerErr) && empty($timeErr) && empty($gameIDErr)) {
-        $feedback = "Successfully added!";
-        addGame($players, $explainer, $time, $gameID);
+        $feedback = "Successfully deleted!";
+        deleteGame($id);
         header("refresh:3;url=../index.php");
     }
     else {
@@ -73,12 +76,13 @@ function test_input($data) {
 }
 ?>
     <link rel="stylesheet" href="../resources/css/form.css">
-</head>
-<body>
-<header class="sticky-top">
-    <a id="goback" href="games.php"><i class="fas fa-long-arrow-alt-left"></i> Go back</a>
-    <h1 class="">Planningstool</h1>
-</header>
+    <link rel="stylesheet" href="../resources/css/delete.css">
+    </head>
+    <body>
+    <header class="sticky-top">
+        <a id="goback" href="../index.php"><i class="fas fa-long-arrow-alt-left"></i> Go back</a>
+        <h1 class="">Planningstool</h1>
+    </header>
 
 <div class="container">
     <div>
@@ -94,37 +98,37 @@ function test_input($data) {
                 </div>
             </div>
             <div class="right">
-            <h2 class="gameTitle"><?=  $getGame['name'] ?></h2>
+                <h2 class="gameTitle"><?=  $getGame['name'] ?></h2>
+                <h1 class="areUSure">ARE YOU SURE?</h1>
                 <div id="form">
-                    <form method="POST" action="<?= htmlspecialchars($_SERVER["PHP_SELF"]), "?id=".$id;?>">
+                    <form method="POST" action="<?= htmlspecialchars($_SERVER["PHP_SELF"]), "?gameID=".$getPlannedGame['gameID']."&id=".$getPlannedGame['id'];?>">
                         <div class="form-group row">
                             <label for="players" class="col-sm-2 col-form-label">Players</label>
                             <div class="col-sm-10">
-                                <input name="players" type="text" class="form-control" id="players" placeholder="Wie spelen er mee?">
+                                <input readonly name="players" type="text" class="form-control" id="players" placeholder="Wie spelen er mee?" value="<?= $getPlannedGame['players'] ?>">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="explainer" class="col-sm-2 col-form-label">Explainer</label>
                             <div class="col-sm-10">
-                                <input name="explainer" type="text" class="form-control" id="explainer" placeholder="Wie legt het spel uit?">
+                                <input readonly name="explainer" type="text" class="form-control" id="explainer" placeholder="Wie legt het spel uit?" value="<?= $getPlannedGame['explainer'] ?>">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="time" class="col-sm-2 col-form-label">Time</label>
                             <div class="col-sm-10">
-                                <input name="time" type="time" class="form-control" id="time" placeholder="Hoelaat?">
+                                <input readonly name="time" type="time" class="form-control" id="time" placeholder="Hoelaat?" value="<?= $getPlannedGame['time'] ?>">
                             </div>
                         </div>
 
                         <div class="form-group row d-none">
                             <label for="gameID" class="col-sm-2 col-form-label">gameID</label>
                             <div class="col-sm-10">
-                                <input name="gameID" type="text" class="form-control" id="gameID" value="<?= $_GET['id'] ?>">
+                                <input readonly name="gameID" type="text" class="form-control" id="gameID" value="<?= $getPlannedGame['gameID'] ?>">
                             </div>
                         </div>
-
 
                         <div class="form-group row">
                             <div class="col-sm-10">
